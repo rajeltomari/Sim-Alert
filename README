@@ -1,0 +1,80 @@
++--------------------------------------------------------
+| Nova Ship Alert Status Mod
+|
+| Developer: Moriel Schottlender
+| Email: themoocode@gmail.com
+|
+| This application is developed under the licenses
+| of Nova and CodeIgniter.
++--------------------------------------------------------
+
+This extension lets you switch "Alert modes" for a star trek ship (Red alert/Yellow alert/etc). Those alerts are then displayed in the "sim" page.
+
+In this file, whenever you see [mod], it is the folder in which the the extension files are located. The tag [nova] denotes the path to your nova installation files.
+
+1. INSTALLATION
+================
+
+  A: SQL DATABASE
+  ---------------
+Alert Status comes with a database.sql file. This file adds the necessary entries to existing tables
+and creates one more tables into the nova database.
+It's best that you import it directly into your mySQL database.
+
+  B: FILES
+  --------
+This extension modifies the following application files:
+	./applications/controllers/ajax.php
+	./applications/controllers/admin.php
+	./applications/controllers/sim.php
+
+If you haven't yet modified these files, you can just upload the entire content of the ./applications/
+directory in the extension into your Nova ./applications/ directory.
+
+===
+WARNING!! Uploading the folders directly will override existing files. If you've already modified those
+controllers, you will need to modify these files manually.
+===
+
+    * Modified Nova Installation
+    ----------------------------
+If you've already modified your Nova installation (added other modifications or extensions), specially
+if you've already changed the controllers
+	./applications/controllers/ajax.php
+	./applications/controllers/admin.php
+	./applications/controllers/sim.php
+you will need to manually add the functions into your controllers.
+
+===
+WARNING!!! Do not attempt to manually change code unless you know what you're doing.
+           ALWAYS BACKUP YOUR FILES BEFORE YOU ADD MODIFICATIONS!!
+===
+
+1. Open [nova]/applications/controllers/ajax.php in your Nova install.
+   Copy the functions inside [mod]/applications/controllers/ajax.php into the Nova version of
+   the file.
+   
+2. Open [nova]/applications/controllers/admin.php in your Nova install.
+   Copy the functions inside [mod]/applications/controllers/admin.php into the Nova version of
+   the file.
+
+3. Open [nova]/applications/controllers/sim.php in your Nova install.
+   Copy the functions inside [mod]/applications/controllers/sim.php into the Nova version of
+   the file.
+
+4. Upload [mod]/applications/models/alertstatus_model.php into your [nova]/applications/models/
+   folder of your Nova install.
+
+5. Upload [mod]/applications/assets/ and all of its subfolders into your [nova]/applications/assets/
+   folder of your Nova install.
+   
+6. Upload [mod]/applications/views/_base_override/admin/ into your [nova]/applications/views/_base_override/admin/ folder of your Nova install.
+
+7. Upload [mod]/applications/views/_base_override/main/ into your
+   [nova]/applications/views/_base_override/main/ folder of your Nova install.
+
+    ===
+    NOTICE: The files in [mod]/applications/views/_base_override/main/ (step 7) change an already existing view page in nova. If you've already changes something in that page, you will need to figure out a way to integrate the two versions.
+    ===
+
+Enjoy!
